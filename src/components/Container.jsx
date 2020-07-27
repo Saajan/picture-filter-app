@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import localforage from 'localforage';
-import Image from './Image';
+import Image from './Image/Image';
 import Upload from './Upload';
 
 export default () => {
