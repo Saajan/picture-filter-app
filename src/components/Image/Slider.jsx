@@ -7,7 +7,7 @@ import 'react-rangeslider/lib/index.css';
 
 export default (props) => {
 
-    let { value, type } = props;
+    let { value, type, min = 0, max = 100, step = 1 } = props;
 
     const dispatch = useDispatch();
 
@@ -21,9 +21,10 @@ export default (props) => {
     return (
         <SliderContainer>
             <Slider
-                min={0}
-                max={100}
+                min={min}
+                max={max}
                 value={value}
+                step={step}
                 onChange={handleChange}
             />
             <div className='value'>{value}</div>

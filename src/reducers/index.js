@@ -3,7 +3,8 @@ import {
 } from '../actions';
 
 const initialState = {
-    blur: 0
+    blur: 0,
+    grayscale: 0
 }
 
 export default (state = initialState, action) => {
