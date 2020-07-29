@@ -6,7 +6,7 @@ import Slider from './Slider';
 export default () => {
 
     let blurValue = useSelector(state => state.blur);
-    let grayscaleValue = useSelector(state => state.greyScale);
+    let grayscaleValue = useSelector(state => state.grayscale);
 
     return <SettingsContainer>
         <div>

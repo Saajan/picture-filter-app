@@ -9,7 +9,7 @@ export default (props) => {
     let { image, setImage } = props;
 
     let blurValue = useSelector(state => state.blur);
-    let greyScaleValue = useSelector(state => state.grayscale);
+    let grayscaleValue = useSelector(state => state.grayscale);
 
     let fileUrl = URL.createObjectURL(image[0]);
 
@@ -23,7 +23,7 @@ export default (props) => {
             <Settings></Settings>
             <button onClick={() => removeImage()}>x</button>
             <div className="image-container">
-                <ImageWrapper blur={blurValue} grayscale={greyScaleValue}><img src={fileUrl} alt="uploaded" /></ImageWrapper>
+                <ImageWrapper blur={blurValue} grayscale={grayscaleValue}><img src={fileUrl} alt="uploaded" /></ImageWrapper>
             </div>
         </div>
     );
