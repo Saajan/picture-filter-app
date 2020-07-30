@@ -1,9 +1,8 @@
 import React from 'react';
 import localforage from 'localforage';
 import { useSelector } from 'react-redux';
-
 import Settings from './Settings';
-import { ImageWrapper } from './styled';
+import { ImageWrapper, ButtonWrapper, MainContainer } from './styled';
 
 export default (props) => {
     let { image, setImage } = props;
@@ -19,12 +18,14 @@ export default (props) => {
     };
 
     return (
-        <div>
-            <Settings></Settings>
-            <button onClick={() => removeImage()}>x</button>
-            <div className="image-container">
-                <ImageWrapper blur={blurValue} grayscale={grayscaleValue}><img src={fileUrl} alt="uploaded" /></ImageWrapper>
-            </div>
-        </div>
+        <>
+            <ButtonWrapper><button onClick={() => removeImage()}>x</button></ButtonWrapper>
+            <MainContainer>
+                <Settings></Settings>
+                <ImageWrapper blur={blurValue} grayscale={grayscaleValue}>
+                    <img src={fileUrl} alt="uploaded" />
+                </ImageWrapper>
+            </MainContainer>
+        </>
     );
 }

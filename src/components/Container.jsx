@@ -13,7 +13,7 @@ export default () => {
         }
         getImage();
     }, []);
-    return <div className="container">
+    return <>
         {image ? <Image image={image} setImage={setImage}/> : <Upload setImage={setImage} />}
-    </div>
+    </>
 }
