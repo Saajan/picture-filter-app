@@ -25,16 +25,19 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const MainContainer = styled.div`
+    margin: 20px;
+    width: 100%;
+    height: calc(100% - 40px);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex: 1 2;
 `;
 
 export const ImageWrapper = styled.div`
     border: 1px solid #eee;
-    width: 500px;
-    height: 500px;
+    height: 100%;
     img {
       height: 100%;
       width: 100%;
