@@ -7,8 +7,7 @@ import { ImageWrapper, ButtonWrapper, MainContainer } from './styled';
 export default (props) => {
     let { image, setImage } = props;
 
-    let blurValue = useSelector(state => state.blur);
-    let grayscaleValue = useSelector(state => state.grayscale);
+    let stateValue = useSelector(state => state);
 
     let fileUrl = URL.createObjectURL(image[0]);
 
@@ -22,7 +21,7 @@ export default (props) => {
             <ButtonWrapper><button onClick={() => removeImage()}>x</button></ButtonWrapper>
             <MainContainer>
                 <Settings></Settings>
-                <ImageWrapper blur={blurValue} grayscale={grayscaleValue}>
+                <ImageWrapper filters={stateValue}>
                     <img src={fileUrl} alt="uploaded" />
                 </ImageWrapper>
             </MainContainer>

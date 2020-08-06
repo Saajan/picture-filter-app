@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const SettingsContainer = styled.div`
     display:flex;
     flex-direction: column;
+    width:100%;
 `;
 
 export const SliderContainer = styled.div`
-    width:300px;
+    max-width:300px;
+    width:100%;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -42,6 +44,14 @@ export const ImageWrapper = styled.div`
       height: 100%;
       width: 100%;
       object-fit: contain;
-      filter : blur(${({ blur }) => blur}px) grayscale(${({ grayscale }) => grayscale}%)
+      filter : blur(${({filters}) => filters.blur}px) 
+                grayscale(${({filters}) => filters.grayscale}%) 
+                brightness(${({filters}) => filters.brightness}%) 
+                contrast(${({filters}) => filters.contrast}%) 
+                invert(${({filters}) => filters.invert}%)
+                sepia(${({filters}) => filters.sepia}%)
+                saturate(${({filters}) => filters.saturate}%)
+                opacity(${({filters}) => filters.opacity}%)
+                hue-rotate(${({filters}) => filters.hueRotate}deg);
     }
 `;
